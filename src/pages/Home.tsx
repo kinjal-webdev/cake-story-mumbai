@@ -48,7 +48,7 @@ export default function Home() {
         }`}
       >
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-          <div className="font-serif text-3xl md:text-4xl font-bold text-primary">
+          <div className="font-serif text-5xl md:text-6xl font-bold text-primary">
             Cake Story
           </div>
           <div className="hidden md:flex items-center space-x-8 text-foreground font-medium">
