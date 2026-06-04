@@ -48,16 +48,39 @@ export default function Home() {
         }`}
       >
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="text-4xl md:text-5xl">🎂</span>
+          <div className="flex items-center gap-3">
+            {/* Cartoon cake SVG */}
+            <svg width="52" height="52" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              {/* Candle */}
+              <rect x="30" y="6" width="5" height="10" rx="2" fill="#FBBF24"/>
+              {/* Flame */}
+              <ellipse cx="32.5" cy="5" rx="3" ry="4" fill="#F97316"/>
+              <ellipse cx="32.5" cy="6" rx="1.5" ry="2" fill="#FEF08A"/>
+              {/* Top tier */}
+              <rect x="16" y="18" width="32" height="12" rx="4" fill="#F9A8D4"/>
+              <rect x="16" y="26" width="32" height="4" rx="0" fill="#EC4899"/>
+              {/* Bottom tier */}
+              <rect x="10" y="30" width="44" height="16" rx="4" fill="#FBCFE8"/>
+              <rect x="10" y="42" width="44" height="4" rx="0" fill="#F472B6"/>
+              {/* Base */}
+              <rect x="8" y="46" width="48" height="6" rx="3" fill="#FDE68A"/>
+              {/* Dots decoration */}
+              <circle cx="24" cy="36" r="2.5" fill="#EC4899"/>
+              <circle cx="32" cy="36" r="2.5" fill="#EC4899"/>
+              <circle cx="40" cy="36" r="2.5" fill="#EC4899"/>
+              <circle cx="22" cy="23" r="2" fill="#fff" opacity="0.6"/>
+              <circle cx="30" cy="22" r="1.5" fill="#fff" opacity="0.6"/>
+              <circle cx="38" cy="23" r="2" fill="#fff" opacity="0.6"/>
+            </svg>
             <div
-              className="text-5xl md:text-6xl font-bold text-primary drop-shadow-md"
               style={{
-                fontFamily: "'Great Vibes', cursive",
+                fontFamily: "'Pacifico', cursive",
+                fontSize: "clamp(2rem, 4vw, 3rem)",
                 background: "linear-gradient(90deg, #e75480, #ff9f43)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
-                filter: "drop-shadow(0 1px 2px rgba(231,84,128,0.3))",
+                filter: "drop-shadow(0 1px 2px rgba(231,84,128,0.25))",
+                lineHeight: 1.1,
               }}
             >
               Cake Story
