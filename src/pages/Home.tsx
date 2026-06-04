@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeImage, setActiveImage] = useState<string | null>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,6 +18,15 @@ export default function Home() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const navLinks = [
+    { href: "#about", label: "Our Story" },
+    { href: "#products", label: "Menu" },
+    { href: "#gallery", label: "Gallery" },
+    { href: "#reviews", label: "Reviews" },
+    { href: "#custom-form", label: "Order" },
+    { href: "#contact", label: "Contact" },
+  ];
 
   const whatsappNumber = "917977238212";
   const whatsappUrl = `https://wa.me/${whatsappNumber}`;
@@ -42,31 +52,75 @@ export default function Home() {
       {/* 1. Sticky Navigation */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled 
-            ? "bg-white/80 backdrop-blur-md shadow-sm py-3" 
+          isScrolled
+            ? "bg-white/90 backdrop-blur-md shadow-sm py-3"
             : "bg-transparent py-5"
         }`}
       >
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
+          {/* Logo */}
           <div className="font-serif text-4xl md:text-5xl font-bold text-primary">
             Cake Story
           </div>
+
+          {/* Desktop links */}
           <div className="hidden md:flex items-center space-x-8 text-foreground font-medium">
-            <a href="#about" className="hover:text-primary transition-colors">Our Story</a>
-            <a href="#products" className="hover:text-primary transition-colors">Menu</a>
-            <a href="#gallery" className="hover:text-primary transition-colors">Gallery</a>
-            <a href="#reviews" className="hover:text-primary transition-colors">Reviews</a>
-            <a href="#custom-form" className="hover:text-primary transition-colors">Order</a>
-            <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
+            {navLinks.map((l) => (
+              <a key={l.href} href={l.href} className="hover:text-primary transition-colors">
+                {l.label}
+              </a>
+            ))}
           </div>
-          <div>
+
+          {/* Desktop Order Now button */}
+          <div className="hidden md:block">
             <a href="#custom-form">
               <Button className="bg-primary hover:bg-primary/90 text-white font-semibold rounded-full px-6 py-2 shadow-md hover:shadow-lg transition-all">
                 Order Now
               </Button>
             </a>
           </div>
+
+          {/* Mobile hamburger */}
+          <button
+            className="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 z-50"
+            onClick={() => setMenuOpen((o) => !o)}
+            aria-label="Toggle menu"
+          >
+            <span className={`block w-6 h-0.5 bg-primary transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+            <span className={`block w-6 h-0.5 bg-primary transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
+            <span className={`block w-6 h-0.5 bg-primary transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+          </button>
         </div>
+
+        {/* Mobile dropdown menu */}
+        <AnimatePresence>
+          {menuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2 }}
+              className="md:hidden bg-white/95 backdrop-blur-md shadow-lg border-t border-pink-100 px-6 py-4 flex flex-col gap-4"
+            >
+              {navLinks.map((l) => (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  className="text-foreground font-medium text-lg hover:text-primary transition-colors py-1 border-b border-pink-50"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {l.label}
+                </a>
+              ))}
+              <a href="#custom-form" onClick={() => setMenuOpen(false)}>
+                <Button className="w-full bg-primary hover:bg-primary/90 text-white font-semibold rounded-full mt-2">
+                  Order Now
+                </Button>
+              </a>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
 
       {/* 2. Hero Section */}
