@@ -543,10 +543,6 @@ export default function Home() {
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center text-sm gap-4">
             <p>© 2025 Cake Story. All rights reserved. | Pure Vegetarian Bakery, Mumbai</p>
-            <div className="flex gap-4">
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-            </div>
           </div>
         </div>
       </footer>
