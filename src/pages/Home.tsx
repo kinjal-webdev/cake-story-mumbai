@@ -48,8 +48,20 @@ export default function Home() {
         }`}
       >
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-          <div className="font-serif text-5xl md:text-6xl font-bold text-primary">
-            Cake Story
+          <div className="flex items-center gap-2">
+            <span className="text-4xl md:text-5xl">🎂</span>
+            <div
+              className="text-5xl md:text-6xl font-bold text-primary drop-shadow-md"
+              style={{
+                fontFamily: "'Great Vibes', cursive",
+                background: "linear-gradient(90deg, #e75480, #ff9f43)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                filter: "drop-shadow(0 1px 2px rgba(231,84,128,0.3))",
+              }}
+            >
+              Cake Story
+            </div>
           </div>
           <div className="hidden md:flex items-center space-x-8 text-foreground font-medium">
             <a href="#about" className="hover:text-primary transition-colors">Our Story</a>
