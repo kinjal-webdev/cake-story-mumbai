@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaWhatsapp, FaPhone, FaStar, FaMapMarkerAlt, FaClock, FaInstagram, FaFacebook } from "react-icons/fa";
+import { FaWhatsapp, FaPhone, FaStar, FaMapMarkerAlt, FaClock, FaInstagram } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -538,9 +538,6 @@ export default function Home() {
               >
                 <FaInstagram className="text-xl" />
                 <span>@cakestorymumbai</span>
-              </a>
-              <a href="#" className="bg-white/10 p-3 rounded-full hover:bg-primary hover:text-white transition-colors">
-                <FaFacebook className="text-xl" />
               </a>
             </div>
           </div>
