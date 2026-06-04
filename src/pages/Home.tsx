@@ -536,7 +536,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 bg-gradient-to-r from-[#f58529] via-[#dd2a7b] to-[#8134af] text-white px-4 py-2 rounded-full font-semibold text-sm shadow-lg hover:scale-105 transition-transform"
               >
-                <FaInstagram className="text-3xl" />
+                <FaInstagram style={{ fontSize: "2rem" }} />
                 <span>@cakestorymumbai</span>
               </a>
             </div>
