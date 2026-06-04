@@ -56,6 +56,8 @@ export default function Home() {
             <a href="#products" className="hover:text-primary transition-colors">Menu</a>
             <a href="#gallery" className="hover:text-primary transition-colors">Gallery</a>
             <a href="#reviews" className="hover:text-primary transition-colors">Reviews</a>
+            <a href="#custom-form" className="hover:text-primary transition-colors">Order</a>
+            <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
           </div>
           <div>
             <a href="#custom-form">
@@ -457,7 +459,7 @@ export default function Home() {
       </section>
 
       {/* 9. Contact Section */}
-      <section className="py-24 bg-foreground text-white relative">
+      <section id="contact" className="py-24 bg-foreground text-white relative">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
